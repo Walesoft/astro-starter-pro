@@ -8,6 +8,7 @@ import ServiceList from "@/components/widgets/ServiceList.astro";
 import Values from "@/components/widgets/Values.astro";
 import aboutImage from "@/assets/images/about-office.webp";
 import Github from "@/components/widgets/Github.astro";
+import Pricing from "@/components/widgets/Pricing.astro";
 
 const heroProps = {
   title: "Lorem Ipsum Dolor Sit Amet",
@@ -214,6 +215,52 @@ const valuesProps = {
   subtitle: "Principles that guide our daily work",
 };
 
+const pricingProps = {
+  title: "Simple, transparent pricing",
+  subtitle: "Choose the plan that fits your needs.",
+  tagline: "Pricing",
+  plans: [
+    {
+      name: "Basic",
+      price: "$9",
+      period: "/month",
+      description: "Perfect for personal projects and hobbyists.",
+      features: ["1 Project", "Basic Support", "Community Access"],
+      buttonText: "Get Started",
+      buttonHref: "#",
+    },
+    {
+      name: "Pro",
+      price: "$29",
+      period: "/month",
+      description: "Best for professional developers and small teams.",
+      features: [
+        "Unlimited Projects",
+        "Priority Support",
+        "Advanced Analytics",
+        "Custom Domains",
+      ],
+      buttonText: "Upgrade to Pro",
+      buttonHref: "#",
+      isPopular: true,
+    },
+    {
+      name: "Enterprise",
+      price: "$99",
+      period: "/month",
+      description: "For large organizations with advanced needs.",
+      features: [
+        "Everything in Pro",
+        "24/7 Dedicated Support",
+        "SSO Integration",
+        "Custom SLAs",
+      ],
+      buttonText: "Contact Sales",
+      buttonHref: "#",
+    },
+  ],
+};
+
 const githubProps = {
   title: "Don't forget to star us!",
   subtitle:
@@ -251,5 +298,6 @@ const metadata = {
   <Content2 {...content2InvertedProps} />
   <ServiceList {...serviceListProps} />
   <Values {...valuesProps} />
+  <Pricing {...pricingProps} />
   <Github {...githubProps} />
 </BaseLayout>
