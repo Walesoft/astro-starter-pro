@@ -87,3 +87,13 @@ export interface PricingPlan {
 export interface PricingProps extends HeadlineProps {
   plans?: PricingPlan[];
 }
+
+export interface IntegrationItem {
+  name: string;
+  icon?: string;
+  url?: string;
+}
+
+export interface IntegrationsProps extends HeadlineProps {
+  integrations?: IntegrationItem[];
+}
