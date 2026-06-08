@@ -7,8 +7,9 @@ import Content2 from "@/components/widgets/Content2.astro";
 import ServiceList from "@/components/widgets/ServiceList.astro";
 import Values from "@/components/widgets/Values.astro";
 import aboutImage from "@/assets/images/about-office.webp";
-import Github from "@/components/widgets/Github.astro";
 import Pricing from "@/components/widgets/Pricing.astro";
+import Integrations from "@/components/widgets/Integrations.astro";
+import Github from "@/components/widgets/Github.astro";
 
 const heroProps = {
   title: "Lorem Ipsum Dolor Sit Amet",
@@ -261,6 +262,24 @@ const pricingProps = {
   ],
 };
 
+const integrationsProps = {
+  title: "Trusted by top companies",
+  subtitle: "Our platform integrates seamlessly with your favorite tools.",
+  tagline: "Integrations",
+  integrations: [
+    { name: "Astro", icon: "tabler:brand-astro", url: "#" },
+    { name: "Tailwind CSS", icon: "tabler:brand-tailwind", url: "#" },
+    { name: "Vercel", icon: "tabler:brand-vercel", url: "#" },
+    { name: "React", icon: "tabler:brand-react", url: "#" },
+    { name: "GitHub", icon: "tabler:brand-github", url: "#" },
+    { name: "Figma", icon: "tabler:brand-figma", url: "#" },
+    { name: "Supabase", icon: "tabler:brand-supabase", url: "#" },
+    { name: "Stripe", icon: "tabler:brand-stripe", url: "#" },
+    { name: "Slack", icon: "tabler:brand-slack", url: "#" },
+    { name: "Discord", icon: "tabler:brand-discord", url: "#" },
+  ],
+};
+
 const githubProps = {
   title: "Don't forget to star us!",
   subtitle:
@@ -299,5 +318,6 @@ const metadata = {
   <ServiceList {...serviceListProps} />
   <Values {...valuesProps} />
   <Pricing {...pricingProps} />
+  <Integrations {...integrationsProps} />
   <Github {...githubProps} />
 </BaseLayout>

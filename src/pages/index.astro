@@ -7,6 +7,7 @@ import devImg from "@/assets/images/dev_balanced.png";
 import openSourceImg from "@/assets/images/open-source.png";
 import Content2 from "@/components/widgets/Content2.astro";
 import Github from "@/components/widgets/Github.astro";
+import Integrations from "@/components/widgets/Integrations.astro";
 const metadata = {
   title: `${siteConfig.name} — The next step for your project`,
   description:
@@ -132,6 +133,17 @@ const metadata = {
       to use, learn from, and contribute to.
     </Fragment>
   </Content2>
+  <Integrations
+    title="Trusted by top companies"
+    subtitle="Our platform integrates seamlessly with your favorite tools."
+    tagline="Integrations"
+    integrations={[
+      { name: "Astro", icon: "tabler:brand-astro", url: "#" },
+      { name: "Tailwind CSS", icon: "tabler:brand-tailwind", url: "#" },
+      { name: "Vercel", icon: "tabler:brand-vercel", url: "#" },
+      { name: "GitHub", icon: "tabler:brand-github", url: "#" },
+    ]}
+  />
   <Github
     title="Don't forget to star us!"
     subtitle="Support this template and keep the project alive. Your stars help us continue improving and adding new features."
