@@ -7,6 +7,7 @@ import Content2 from "@/components/widgets/Content2.astro";
 import ServiceList from "@/components/widgets/ServiceList.astro";
 import Values from "@/components/widgets/Values.astro";
 import aboutImage from "@/assets/images/about-office.webp";
+import Github from "@/components/widgets/Github.astro";
 
 const heroProps = {
   title: "Lorem Ipsum Dolor Sit Amet",
@@ -213,6 +214,28 @@ const valuesProps = {
   subtitle: "Principles that guide our daily work",
 };
 
+const githubProps = {
+  title: "Don't forget to star us!",
+  subtitle:
+    "Support this template and keep the project alive. Your stars help us continue improving and adding new features.",
+  tagline: "Open Source",
+  icon: "lucide:github",
+  actions: [
+    {
+      text: "Star on GitHub",
+      href: "https://github.com/devgelo-labs/astro-starter-pro",
+      variant: "primary",
+      icon: "lucide:star",
+    },
+    {
+      text: "Fork Repository",
+      href: "https://github.com/devgelo-labs/astro-starter-pro/fork",
+      variant: "secondary",
+      icon: "lucide:git-fork",
+    },
+  ],
+};
+
 const metadata = {
   title: "Widgets - Astro Starter Pro",
   description: "Showcase of available components and widgets.",
@@ -228,4 +251,5 @@ const metadata = {
   <Content2 {...content2InvertedProps} />
   <ServiceList {...serviceListProps} />
   <Values {...valuesProps} />
+  <Github {...githubProps} />
 </BaseLayout>

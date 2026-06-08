@@ -6,6 +6,7 @@ import Features from "@/components/widgets/Features.astro";
 import devImg from "@/assets/images/dev_balanced.png";
 import openSourceImg from "@/assets/images/open-source.png";
 import Content2 from "@/components/widgets/Content2.astro";
+import Github from "@/components/widgets/Github.astro";
 const metadata = {
   title: `${siteConfig.name} — The next step for your project`,
   description:
@@ -131,4 +132,24 @@ const metadata = {
       to use, learn from, and contribute to.
     </Fragment>
   </Content2>
+  <Github
+    title="Don't forget to star us!"
+    subtitle="Support this template and keep the project alive. Your stars help us continue improving and adding new features."
+    tagline="Open Source"
+    icon="lucide:github"
+    actions={[
+      {
+        text: "Star on GitHub",
+        href: "https://github.com/devgelo-labs/astro-starter-pro",
+        variant: "primary",
+        icon: "lucide:star",
+      },
+      {
+        text: "Fork Repository",
+        href: "https://github.com/devgelo-labs/astro-starter-pro/fork",
+        variant: "secondary",
+        icon: "lucide:git-fork",
+      },
+    ]}
+  />
 </BaseLayout>
