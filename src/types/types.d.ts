@@ -72,3 +72,18 @@ export interface ValuesProps extends HeadlineProps {
   items?: Value[];
   columns?: 1 | 2 | 3 | 4;
 }
+
+export interface PricingPlan {
+  name: string;
+  price: string;
+  period?: string;
+  description: string;
+  features: string[];
+  buttonText: string;
+  buttonHref: string;
+  isPopular?: boolean;
+}
+
+export interface PricingProps extends HeadlineProps {
+  plans?: PricingPlan[];
+}
