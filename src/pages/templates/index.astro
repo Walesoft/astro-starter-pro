@@ -1,0 +1,148 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+
+const metadata = {
+  title: "Prebuilt Landing Templates — Astro Starter Pro",
+  description:
+    "Browse our selection of prebuilt landing page templates designed to launch your project instantly.",
+};
+
+const templates = [
+  {
+    title: "SaaS Landing Page",
+    description:
+      "Perfect for software-as-a-service platforms. Focuses on features, integrations, flexible pricing, and strong calls to action.",
+    href: "/templates/saas",
+    icon: "lucide:layers",
+    color: "from-blue-500 to-indigo-500",
+    shadow: "shadow-blue-500/10 dark:shadow-blue-500/5",
+    widgets: [
+      "Hero",
+      "Features",
+      "Content2",
+      "Pricing",
+      "Integrations",
+      "Github",
+    ],
+  },
+  {
+    title: "Mobile App Landing",
+    description:
+      "Designed to showcase iOS and Android applications. Highlights core benefits, features, app screenshots, and includes download links.",
+    href: "/templates/app",
+    icon: "lucide:smartphone",
+    color: "from-purple-500 to-pink-500",
+    shadow: "shadow-purple-500/10 dark:shadow-purple-500/5",
+    widgets: ["Hero", "Features", "Content", "Integrations"],
+  },
+  {
+    title: "Startup Launch Page",
+    description:
+      "Optimized for early-stage companies and newsletters. Focuses on explaining the problem, core features, company values, and building a waitlist.",
+    href: "/templates/startup",
+    icon: "lucide:rocket",
+    color: "from-orange-500 to-red-500",
+    shadow: "shadow-orange-500/10 dark:shadow-orange-500/5",
+    widgets: ["Hero", "Features", "Values"],
+  },
+  {
+    title: "Agency / Portfolio Page",
+    description:
+      "Ideal for agencies, freelancers, and consulting firms. Details services offered, corporate values, client tools, and contact CTA.",
+    href: "/templates/agency",
+    icon: "lucide:briefcase",
+    color: "from-teal-500 to-emerald-500",
+    shadow: "shadow-teal-500/10 dark:shadow-teal-500/5",
+    widgets: ["Hero", "ServiceList", "Values", "Integrations"],
+  },
+  {
+    title: "Personal Portfolio",
+    description:
+      "Designed for individuals to showcase their projects, skills, and work experience using interactive grid layouts and timelines.",
+    href: "/templates/portfolio",
+    icon: "lucide:user",
+    color: "from-fuchsia-500 to-violet-500",
+    shadow: "shadow-fuchsia-500/10 dark:shadow-fuchsia-500/5",
+    widgets: ["Hero", "Skills", "Portfolio", "Experience", "Testimonials"],
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <div class="relative py-16 sm:py-24 overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Headline -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span
+          class="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full"
+        >
+          Prebuilt Layouts
+        </span>
+        <h1
+          class="text-4xl font-extrabold tracking-tight sm:text-5xl mt-4 mb-6 bg-linear-to-r from-foreground via-foreground/90 to-muted-foreground bg-clip-text text-transparent"
+        >
+          Launch Your Project Faster
+        </h1>
+        <p class="text-lg text-muted-foreground">
+          Ready-to-use page templates constructed entirely with our library of
+          modular widgets. Select a template and customize it to fit your needs.
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {
+          templates.map((tpl) => (
+            <div
+              class={`reveal group relative flex flex-col justify-between p-8 rounded-2xl border border-border bg-card/60 backdrop-blur-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl ${tpl.shadow}`}
+            >
+              <div>
+                {/* Icon with Gradient Background */}
+                <div
+                  class={`w-12 h-12 rounded-xl flex items-center justify-center bg-linear-to-br ${tpl.color} text-white mb-6 shadow-md`}
+                >
+                  <Icon name={tpl.icon} class="w-6 h-6" />
+                </div>
+
+                <h2 class="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {tpl.title}
+                </h2>
+
+                <p class="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {tpl.description}
+                </p>
+
+                {/* Used Widgets */}
+                <div class="mb-8">
+                  <span class="text-xs font-semibold text-foreground/70 uppercase tracking-wider block mb-3">
+                    Widgets Featured:
+                  </span>
+                  <div class="flex flex-wrap gap-2">
+                    {tpl.widgets.map((widget) => (
+                      <span class="text-xs px-2.5 py-1 rounded-md bg-muted text-muted-foreground border border-border font-mono">
+                        {widget}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Link */}
+              <a
+                href={tpl.href}
+                class="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:underline mt-auto"
+              >
+                Preview Template
+                <Icon
+                  name="lucide:arrow-right"
+                  class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                />
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>
