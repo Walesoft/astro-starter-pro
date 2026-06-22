@@ -14,6 +14,9 @@ import Stats from "@/components/widgets/Stats.astro";
 import Testimonials from "@/components/widgets/Testimonials.astro";
 import FAQ from "@/components/widgets/FAQ.astro";
 import CallToAction from "@/components/widgets/CallToAction.astro";
+import Portfolio from "@/components/widgets/Portfolio.astro";
+import Experience from "@/components/widgets/Experience.astro";
+import Skills from "@/components/widgets/Skills.astro";
 
 const heroProps = {
   title: "Lorem Ipsum Dolor Sit Amet",
@@ -377,6 +380,58 @@ const callToActionProps = {
   ],
 };
 
+const portfolioProps = {
+  title: "Selected Projects",
+  subtitle: "A collection of my recent work.",
+  tagline: "Portfolio",
+  projects: [
+    {
+      title: "Project Alpha",
+      description: "A revolutionary web application.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      tags: ["React", "Astro"],
+    },
+    {
+      title: "Project Beta",
+      description: "Mobile-first e-commerce experience.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      tags: ["Tailwind", "Next.js"],
+    },
+  ],
+};
+
+const experienceProps = {
+  title: "Work Experience",
+  subtitle: "My professional journey.",
+  tagline: "Experience",
+  items: [
+    {
+      title: "Senior Developer",
+      company: "Tech Corp",
+      date: "2021 - Present",
+      description: "Leading frontend initiatives.",
+    },
+    {
+      title: "Web Developer",
+      company: "Agency X",
+      date: "2019 - 2021",
+      description: "Built dozens of client sites.",
+    },
+  ],
+};
+
+const skillsProps = {
+  title: "Tech Stack",
+  tagline: "Skills",
+  skills: [
+    { name: "Astro", icon: "tabler:brand-astro" },
+    { name: "React", icon: "tabler:brand-react" },
+    { name: "Tailwind", icon: "tabler:brand-tailwind" },
+  ],
+};
+
 const metadata = {
   title: "Widgets - Astro Starter Pro",
   description: "Showcase of available components and widgets.",
@@ -393,6 +448,9 @@ const metadata = {
   <ServiceList {...serviceListProps} />
   <Values {...valuesProps} />
   <Stats {...statsProps} />
+  <Skills {...skillsProps} />
+  <Portfolio {...portfolioProps} />
+  <Experience {...experienceProps} />
   <Testimonials {...testimonialsProps} />
   <Pricing {...pricingProps} />
   <Integrations {...integrationsProps} />

@@ -137,3 +137,36 @@ export interface CallToActionWidgetProps extends Widget {
   callToAction2?: CallToAction;
   actions?: string | CallToAction[];
 }
+
+export interface ProjectItem {
+  title: string;
+  description: string;
+  image?: string;
+  link?: string;
+  tags?: string[];
+}
+
+export interface PortfolioProps extends HeadlineProps {
+  projects?: ProjectItem[];
+}
+
+export interface ExperienceItem {
+  title: string;
+  company: string;
+  description?: string;
+  date: string;
+  icon?: string;
+}
+
+export interface ExperienceProps extends HeadlineProps {
+  items?: ExperienceItem[];
+}
+
+export interface SkillItem {
+  name: string;
+  icon?: string;
+}
+
+export interface SkillsProps extends HeadlineProps {
+  skills?: SkillItem[];
+}
