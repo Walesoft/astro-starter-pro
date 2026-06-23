@@ -31,7 +31,7 @@ export interface Widget {
   isDark?: boolean;
   bg?: string;
   containerClass?: string;
-  classes?: Record<string, string>;
+  classes?: Record<string, string | Record<string, string>>;
   animate?: boolean;
 }
 
